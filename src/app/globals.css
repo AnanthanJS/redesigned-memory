@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 190 100% 50%; /* interstellar-blue approx */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 282 43% 53%; /* singularity-purple approx */
+    --accent-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 190 100% 50%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-space-void text-foreground font-sci-fi;
+    /* Cinematic Background Override */
+    background-color: #0a0a0f;
+  }
+}
+
+.glass-panel {
+  @apply bg-event-horizon/80 backdrop-blur-md border border-interstellar-blue/20 shadow-xl;
+}
+
+/* Cinematic Animations */
+@keyframes gravitationalPull {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(calc(var(--mouse-x, 0) * 20px), calc(var(--mouse-y, 0) * 20px)) scale(1.05); opacity: 1; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+}
+
+@keyframes timeWarp {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.5); filter: hue-rotate(180deg); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes tunnelFall {
+  0% { transform: scale(1) translateZ(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: scale(3) translateZ(-1000px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .time-warp, .gravitational-pull, .tunnel-fall {
+    animation: none;
+  }
+}
