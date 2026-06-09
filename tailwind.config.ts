@@ -16,14 +16,12 @@ const config: Config = {
         mono: ['var(--font-major-mono)', 'monospace'],
       },
       colors: {
-        'space-void': '#0a0a0f',
-        'event-horizon': '#12121a',
-        'gravity-pull': '#1a1a2e',
-        'interstellar-blue': '#00d4ff',
-        'singularity-purple': '#9b59b6',
-        'accretion-orange': '#ff6b35',
-        'time-warp-teal': '#00e5c3',
-        'nebula-pink': '#ff2a7a',
+        // New Premium Cinematic Palette
+        'space-black': '#030305',
+        'deep-indigo': '#1a1025',
+        'cosmic-violet': '#3d2050',
+        'soft-amber': '#d4a373',
+        'pure-white': '#ffffff',
         
         // Retain standard semantic variables for legacy components
         background: "hsl(var(--background))",

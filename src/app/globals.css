@@ -20,47 +20,34 @@
     --accent-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 190 100% 50%;
-    --radius: 0.75rem;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-space-void text-foreground font-sci-fi;
-    /* Cinematic Background Override */
-    background-color: #0a0a0f;
-  }
+:root {
+  /* Cinematic Atmosphere Variables */
+  --space-black: #030305;
+  --deep-indigo: #1a1025;
+  --cosmic-violet: #3d2050;
+  --soft-amber: #d4a373;
+  --pure-white: #ffffff;
 }
 
-.glass-panel {
-  @apply bg-event-horizon/80 backdrop-blur-md border border-interstellar-blue/20 shadow-xl;
+body {
+  color: var(--pure-white);
+  background-color: var(--space-black);
+  font-family: var(--font-sci-fi), sans-serif;
+  overflow-x: hidden;
+  /* Blade Runner 2049 atmospheric base */
+  background-image: radial-gradient(circle at 50% 0%, var(--deep-indigo) 0%, var(--space-black) 100%);
 }
 
-/* Cinematic Animations */
-@keyframes gravitationalPull {
-  0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
-  50% { transform: translate(calc(var(--mouse-x, 0) * 20px), calc(var(--mouse-y, 0) * 20px)) scale(1.05); opacity: 1; }
-  100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+/* Hide scrollbar for immersive experience */
+::-webkit-scrollbar {
+  display: none;
 }
-
-@keyframes timeWarp {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.5); filter: hue-rotate(180deg); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-
-@keyframes tunnelFall {
-  0% { transform: scale(1) translateZ(0); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: scale(3) translateZ(-1000px); opacity: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .time-warp, .gravitational-pull, .tunnel-fall {
-    animation: none;
-  }
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

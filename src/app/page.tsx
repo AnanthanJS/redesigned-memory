@@ -1,9 +1,9 @@
-import TesseractNavigator from '@/components/tesseract/TesseractNavigator';
+import CreativeUniverse from '@/components/universe/CreativeUniverse';
 
-export default function PortfolioPage() {
+export default function Home() {
   return (
-    <main className="w-full h-screen overflow-hidden bg-space-void">
-      <TesseractNavigator />
+    <main className="min-h-screen bg-space-black selection:bg-cosmic-violet/50 selection:text-soft-amber">
+      <CreativeUniverse />
     </main>
   );
 }
